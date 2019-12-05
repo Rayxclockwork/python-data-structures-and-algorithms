@@ -33,4 +33,4 @@ N/A
 -->
 12/03/2019 2:00pm -- Typed out code, added test file
 
-![Whiteboard:] (https://drive.google.com/file/d/19yVWbaonJ6H6YGaA4ptVm9MMpDdJ1E6-/view?usp=sharing)
+![Whiteboard:](https://drive.google.com/file/d/19yVWbaonJ6H6YGaA4ptVm9MMpDdJ1E6-/view?usp=sharing)
