@@ -9,4 +9,4 @@ Print an array in reverse order without using a built-in method
 Used a while loop to iterate over array and appended each iteration to new array in reverse order
 
 ## Solution
-![Whiteboard](https://imgur.com/IFo690J)
+![Whiteboard](/assets/array-reverse.jpg)
