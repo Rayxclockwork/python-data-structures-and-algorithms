@@ -1,0 +1,6 @@
+{
+  "python.pythonPath": "/Users/raedelaney/.local/share/virtualenvs/array_binary_search-HvpONzF-/bin/python",
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true
+}
