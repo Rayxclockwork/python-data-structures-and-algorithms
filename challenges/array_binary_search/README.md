@@ -9,6 +9,13 @@ Using big O notation, find the index of a list element that matches a search ter
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Will need python 3(or nearest equivalent to run)
+As this exists primarily to test the function than as its own program, my suggestion would be to run it as pytest
+In command line, go to pipenv shell
+Once in the shell, install the pytest dependencies
+Type pytest and hit enter/return
+You should then see the results of the test suite.
+You could also use this to test different arrays and target values.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. This is also an area which you can include any visuals; flow charts, example usage gifs, screen captures, etc.-->
@@ -26,3 +33,5 @@ N/A
 <!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 01-01-2001 4:59pm - Added functionality to add and delete some things.
 -->
+12/04/2019 2:30pm - Code and test passes; still missing -1 feature
+12/04/2019 5:43pm - Updated Readme
