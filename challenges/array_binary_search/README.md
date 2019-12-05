@@ -37,4 +37,4 @@ N/A
 12/04/2019 5:43pm - Updated Readme
 12/05/2019 9:30am - Working during code review
 
-1[Whiteboard](https://imgur.com/LHPbFlj)
+![Whiteboard](https://imgur.com/LHPbFlj)
