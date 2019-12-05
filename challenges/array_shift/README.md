@@ -33,4 +33,4 @@ N/A
 -->
 12/03/2019 2:00pm -- Typed out code, added test file
 
-![Whiteboard:](https://imgur.com/ytam8lG)
+![Whiteboard:](/assets/array_shift.jpg)
