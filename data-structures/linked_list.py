@@ -7,8 +7,8 @@ class LinkedList:
 
     def includes(self, target):
         """searches linked list to find specific value"""
-        if not self.head:
-            return False
+        # if not self.head:
+        #     return False
 
         current = self.head
         while current:
