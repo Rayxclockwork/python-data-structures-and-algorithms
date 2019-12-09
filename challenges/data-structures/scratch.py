@@ -1,4 +1,4 @@
-class LinkedList:
+
     def __init__(self, data, next):
         """starts empty linked list"""
         self.data = data
@@ -19,26 +19,19 @@ class LinkedList:
 
     def insert(self, item):
         """Instantiates new node as head"""
-        new_node = Node(data, self.head)
-        self.head = newNode
-        self.size += 1
+       new_node = Node(data, self.head)
+       self.head = newNode
+       self.size+=1
 
-    def __str__(self):
+    def __str__():
         if self.size > 1:
-            return str(LinkedList)
+            return
 
-
-class Node(LinkedList):
+# No public methods
+# 2 attributes/properties - next, value
+class Node:
+    pass
 
     def __init__(self, value):
         self.value = value
         self.next = None
-
-
-node1 = Node('1')
-node2 = Node('2')
-node3 = Node('3')
-node4 = Node('5')
-node5 = Node('12')
-node6 = Node('4')
-node7 = Node('15')
