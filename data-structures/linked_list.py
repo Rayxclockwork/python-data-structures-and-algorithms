@@ -59,3 +59,19 @@ class LinkedList:
                 current.next = new_node
                 break
             current = current.next
+
+    def kth_from_type(self, k):
+        """finds value of node that's kth from end of list"""
+        current = self.head
+        length = 0
+        while current.next:
+            current = current.next
+            length += 1
+            current = self.head
+            count = length - k
+            if k > count:
+                return 'exception'
+            while count > 0:
+                current = current.next
+                count += 1
+            return current.value
