@@ -1,5 +1,6 @@
 class Node:
     """creates new node when called"""
+
     def __init__(self, value):
         self.value = value
         self.next = None
@@ -39,10 +40,14 @@ class LinkedList:
                 current = current.next
                 current.next = new_node
 
-    # def insert_after(self, value, new_value):
-    # """inserts new node after given target value"""
-    #     while current.next:
-    #         if
+    def insert_after(self, value, new_value):
+        """inserts new node after given target value"""
+        new_node = Node(new_value)
+        current = self.head
+        while current.value != value:
+            current = current.next
+            new_node.next = current.next
+            current.next = new_node
 
     def insert_before(self, value, new_value):
         """inserts new node before a given target value"""
