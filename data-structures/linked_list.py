@@ -1,9 +1,12 @@
+# import pdb
+
+
 class Node:
     """creates new node when called"""
 
-    def __init__(self, value):
+    def __init__(self, value, next=None):
         self.value = value
-        self.next = None
+        self.next = next
 
 
 class LinkedList:
@@ -22,7 +25,8 @@ class LinkedList:
 
     def insert(self, value):
         """Instantiates new node as head"""
-        new_node = Node(value)
+        current = self.head
+        new_node = Node(value, current)
         self.head = new_node
 
     def __str__(self):
@@ -60,18 +64,30 @@ class LinkedList:
                 break
             current = current.next
 
-    def kth_from_type(self, k):
+    def kth_from_end(self, k):
         """finds value of node that's kth from end of list"""
         current = self.head
         length = 0
-        while current.next:
-            current = current.next
-            length += 1
-            current = self.head
-            count = length - k
-            if k > count:
-                return 'exception'
-            while count > 0:
+        try:
+            while current.next:
                 current = current.next
-                count += 1
-            return current.value
+                length += 1
+
+            while length - k < length:
+                current = self.head
+                current = current.next
+                print('line 82', current.next.value)
+                return current.next.value
+        except Exception as e:
+            print('#84 current', e)
+
+
+ll = LinkedList()
+ll.insert(1)
+ll.insert(12)
+ll.insert(3)
+ll.insert(5)
+ll.insert(7)
+ll.insert(11)
+ll.insert(51)
+print('#95 current', ll.kth_from_end(5))
