@@ -25,8 +25,8 @@ def test_insert_before(new_list):
     assert new_list.insert_before(5, 12)
 
 
-# def test_insert_after():
-#     assert LinkedList.insert_after(3, 8)
+def test_insert_after():
+    assert LinkedList.insert_after(3, 8)
 
 
 @pytest.fixture()
