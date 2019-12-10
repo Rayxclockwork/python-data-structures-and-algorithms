@@ -11,3 +11,4 @@ Practice traversing a linked list, inserting and moving nodes in a linked list
 <!-- Description of each method publicly available to your Linked List -->
 
 ![whiteboard:](/assets/linkedlistchallenge.jpg)
+![whiteboard:](/assets/kthfromend.jpg)
