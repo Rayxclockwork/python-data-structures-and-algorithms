@@ -29,6 +29,10 @@ def test_insert_after(new_list):
     assert LinkedList.insert_after(new_list, 3, 8)
 
 
+# def test_kth_from_end(new_list):
+#     assert LinkedList.kth_from_end(new_list, )
+
+
 @pytest.fixture()
 def new_list():
     print('in new list')
