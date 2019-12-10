@@ -1,3 +1,10 @@
+class Node:
+    """creates new node when called"""
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
 class LinkedList:
     def __init__(self):
         """starts empty linked list"""
@@ -9,43 +16,41 @@ class LinkedList:
         while current:
             if current.value == target:
                 return True
-        current = current.next
+            current = current.next
         return False
 
-    def insert(self, data):
+    def insert(self, value):
         """Instantiates new node as head"""
-        new_node = Node(data)
+        new_node = Node(value)
         self.head = new_node
 
     def __str__(self):
-        if self.size > 1:
-            return str(LinkedList)
+        """returns stringified contents of linked list"""
+        return str(LinkedList)
 
     def append(self, value):
+        """appends new node to the end of list"""
+        current = self.head
         new_node = Node(value)
-        if self.head is None:
+        if current is None:
             self.head = new_node
-            return
-        n = self.head
-        while n.ref is not None:
-            self.head = self.head.ref
-            self.head.ref = new_node
+        else:
+            while current.next:
+                current = current.next
+                current.next = new_node
 
-    def insert_after(self, value, new_value):
-        while current.next:
-            if 
+    # def insert_after(self, value, new_value):
+    # """inserts new node after given target value"""
+    #     while current.next:
+    #         if
 
     def insert_before(self, value, new_value):
+        """inserts new node before a given target value"""
         current = self.head
         while current.next:
             if current.next.value == value:
                 new_node = Node(new_value)
                 new_node.next = current.next
                 current.next = new_node
-
-
-class Node(LinkedList):
-
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+                break
+            current = current.next
