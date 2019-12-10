@@ -22,11 +22,11 @@ def test_append(new_list):
 
 
 def test_insert_before(new_list):
-    assert new_list.insert_before(5, 12)
+    assert new_list.insert_before(new_list, 5, 12)
 
 
-def test_insert_after():
-    assert LinkedList.insert_after(3, 8)
+def test_insert_after(new_list):
+    assert LinkedList.insert_after(new_list, 3, 8)
 
 
 @pytest.fixture()
