@@ -56,9 +56,9 @@ class LinkedList:
     def insert_before(self, value, new_value):
         """inserts new node before a given target value"""
         current = self.head
+        new_node = Node(new_value)
         while current.next:
             if current.next.value == value:
-                new_node = Node(new_value)
                 new_node.next = current.next
                 current.next = new_node
                 break
