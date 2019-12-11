@@ -12,4 +12,4 @@ Ting and I approached this by using a while loop to go through the lists, and al
 
 ## Solution
 
-![Whiteboard](/assets/)
+![Whiteboard](/assets/mergelists.jpg)

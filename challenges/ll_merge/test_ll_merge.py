@@ -1,4 +1,4 @@
-from ll_merge import merge_lists
+from ll_merge import LinkedList
 
 
 def test_merge_lists():
