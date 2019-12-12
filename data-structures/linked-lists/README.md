@@ -12,4 +12,4 @@ Practice traversing a linked list, inserting and moving nodes in a linked list
 
 ![whiteboard:](/assets/linkedlistchallenge.jpg)
 ![whiteboard:](/assets/kthfromend.jpg)
-![whiteboard:](/assets/mergelists.jpg)
+
