@@ -22,3 +22,4 @@ space - O(n) to find end of list
 
 ![whiteboard:](/assets/linkedlistchallenge.jpg)
 ![whiteboard:](/assets/kthfromend.jpg)
+![whiteboard:](/assets/mergelists.jpg)
