@@ -4,10 +4,10 @@ class LinkedList:
 		self.head = None
 
 	def insert(self, value):
-        """Instantiates new node as head"""
-        current = self.head
-        new_node = Node(value, current)
-        self.head = new_node
+		"""Instantiates new node as head"""
+		current = self.head
+		new_node = Node(value, current)
+		self.head = new_node
 
 
 	def merge_lists(self, linked_list1, linked_list2):
