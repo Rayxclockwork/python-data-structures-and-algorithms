@@ -8,7 +8,6 @@ class Stack:
 
     def __init__(self):
         """creates new stack instance"""
-        self.stack = []
         self.top = None
 
     def push(self, value):
@@ -22,7 +21,12 @@ class Stack:
 
     def pop(self):
         """takes top node off stack"""
-        self.stack.pop(0)
+        if self.top == None:
+            return ('stack is empty')
+        else:
+            popped_node = self.top
+            self.top = self.top.next
+            return popped_node.value
 
     def peek(self):
         """returns value of top node"""
@@ -38,7 +42,6 @@ class Stack:
 class Queue:
     def __init__(self):
         """creates new instance of queue"""
-        self.queue = []
         self.front = None
 
     def enqueue(self, value):
@@ -54,9 +57,12 @@ class Queue:
 
     def dequeue(self):
         """removes node from beginning of queue"""
-        if len(self.queue) < 1:
-            return None
-        return self.queue.pop(0)
+        if self.front == None:
+            return ('Queue is empty')
+        else:
+            removed_node = self.front
+            self.front = self.front.next
+            return removed_node.value
 
     def peek(self):
         """returns value of node from beginning of queue"""
