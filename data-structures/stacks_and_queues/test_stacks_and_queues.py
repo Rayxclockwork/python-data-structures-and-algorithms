@@ -9,37 +9,39 @@ def test_queue_instance():
     queue = Queue()
     assert queue
 
-def test_node_instance(value):
-    node = Node(value)
+def test_node_instance():
+    node = Node(6)
     assert node
 
-def test_push(test_stack):
-    test_stack.push(21)
-    assert test_stack.top.value == 21
+def test_push(new_stack):
+    new_stack.push(21)
+    assert new_stack.top.value == 21
 
-def test_pop(test_stack):
-    assert test_stack.pop(0)
+def test_pop(new_stack):
+    assert new_stack.pop()
 
-def test_stack_peek(test_stack):
-    assert test_stack.peek()
+def test_stack_peek(new_stack):
+    assert new_stack.peek()
 
-def test_stack_is_empty(self):
+def test_stack_is_empty(new_stack):
     expected = False
-    actual = self.top != None
+    actual = new_stack.is_empty()
     assert expected == actual
 
-def test_enqueue(test_queue):
-    assert test_queue.enqueue()
+def test_enqueue():
+    empty_queue = Queue()
+    empty_queue.enqueue(7)
+    assert empty_queue.front.value == 7
 
-def test_dequeue(test_queue):
-    assert test_queue.dequeue()
+def test_dequeue(new_queue):
+    assert new_queue.dequeue()
 
-def test_queue_peek(test_queue):
-    assert test_queue.peek()
+def test_queue_peek(new_queue):
+    assert new_queue.peek()
 
-def test_queue_is_empty(self):
-    expected = True
-    actual = self.front == None
+def test_queue_is_empty(new_queue):
+    expected = False
+    actual = new_queue.is_empty()
     assert expected == actual
 
 @pytest.fixture()
