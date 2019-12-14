@@ -11,9 +11,14 @@ class Stack:
         self.stack = []
         self.top = None
 
-    def push(self):
+    def push(self, value):
         """pushes new node onto stack"""
-        self.stack.append(0)
+        new_node = Node(value)
+        if self.top is None:
+            self.top = new_node
+        else:
+            new_node.next = self.top
+            self.top = new_node
 
     def pop(self):
         """takes top node off stack"""
