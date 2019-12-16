@@ -13,4 +13,4 @@ Given a stack, use push/pop to move information into another stack that will all
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![whiteboard:](/assets/psuedoqueue.jpg)
+![whiteboard:](/assets/pseudoqueue.jpg)
