@@ -81,3 +81,9 @@ class Queue:
             return True
         else:
             return False
+
+class EmptyQueueException(Error):
+    def __init__(self, expression, message):
+        self.expression = expression
+        self.message = ('Queue is Empty!')
+
