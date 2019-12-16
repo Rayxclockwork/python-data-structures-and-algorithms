@@ -41,8 +41,8 @@ class LinkedList:
             self.head = new_node
         else:
             while current.next:
-                current = current.next
-                current.next = new_node
+               current = current.next
+            current.next = new_node
 
     def insert_after(self, value, new_value):
         """inserts new node after given target value"""
@@ -51,7 +51,7 @@ class LinkedList:
         while current.value != value:
             current = current.next
             new_node.next = current.next
-            current.next = new_node
+        current.next = new_node
 
     def insert_before(self, value, new_value):
         """inserts new node before a given target value"""
@@ -63,6 +63,7 @@ class LinkedList:
                 current.next = new_node
                 break
             current = current.next
+            
 
     def kth_from_end(self, k):
         """finds value of node that's kth from end of list"""

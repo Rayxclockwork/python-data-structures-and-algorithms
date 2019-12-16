@@ -30,7 +30,10 @@ class Stack:
 
     def peek(self):
         """returns value of top node"""
-        return self.top.value
+        if self.top != None:
+            return self.top.value
+        else:
+            return None
 
     def is_empty(self):
         """returns boolean stating whether or not stack is empty"""
@@ -43,30 +46,34 @@ class Queue:
     def __init__(self):
         """creates new instance of queue"""
         self.front = None
+        self.rear = None
 
     def enqueue(self, value):
         """adds new node to end of queue"""
-        current = self.front
-        new_node = Node(value)
-        if current is None:
-            self.front = new_node
-        else:
-            while current.next:
-                current = current.next
-                current.next = new_node
+        node = Node(value)
+        node.next = self.rear
+        self.rear = node
+        if not self.front:
+            self.front = node
 
     def dequeue(self):
         """removes node from beginning of queue"""
-        if self.front == None:
-            return ('Queue is empty')
-        else:
-            removed_node = self.front
-            self.front = self.front.next
-            return removed_node.value
+        if not self.front:
+            raise EmptyQueueException('How Rude!')
+
+
+        removed_node = self.front
+        self.front = self.front.next
+        removed_node.next = None
+        return removed_node.value
+
 
     def peek(self):
         """returns value of node from beginning of queue"""
-        return self.front.value
+        if self.front != None:
+            return self.front.value
+        else:
+            return None
 
     def is_empty(self):
         """returns boolean stating whether or not queue is empty"""

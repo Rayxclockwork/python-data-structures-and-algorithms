@@ -17,6 +17,7 @@ def test_insert():
     assert test_list.head.value == 1
 
 
+
 def test_append(new_list):
     assert new_list.append(8)
 
