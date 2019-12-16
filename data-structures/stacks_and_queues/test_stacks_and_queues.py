@@ -17,6 +17,11 @@ def test_push(new_stack):
     new_stack.push(21)
     assert new_stack.top.value == 21
 
+def test_push_multiple(new_stack):
+    #how to insert multiple values(tuple, list, etc.)
+    #write a function that can take in an arbitrary number of inputs
+    pass
+
 def test_pop(new_stack):
     assert new_stack.pop()
 

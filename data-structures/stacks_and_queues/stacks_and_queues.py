@@ -22,7 +22,7 @@ class Stack:
     def pop(self):
         """takes top node off stack"""
         if self.top == None:
-            return ('stack is empty')
+            return None
         else:
             popped_node = self.top
             self.top = self.top.next
