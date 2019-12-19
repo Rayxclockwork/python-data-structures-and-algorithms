@@ -35,7 +35,7 @@ class BinaryTree():
         arr.append(node.value)
 
         if node.right:
-            self.in_order(node.left, arr)
+            self.in_order(node.right, arr)
 
         return arr
 
@@ -66,25 +66,25 @@ class BinarySearchTree(BinaryTree):
 
         if value < self._root.value:
             if not self._root.left:
-            self._root.left = node
+                self._root.left = node
 
         else:
-			if not self._root.right:
-            self._root.right = node
-
+            if not self._root.right:
+                self._root.right = node
+        print(node.value)
 
     def contains(self, value):
         """returns boolean that expresses whether or not value exists in binary tree"""
         if self._root.value == value:
             return True
 
-        elif:
-            if root.right == None:
+        elif value > self._root.value:
+            if self._root.right == None:
                 return False
             else:
                 return BinarySearchTree.contains(self._root.right, value)
         else:
-            if root.left == None:
+            if self._root.left == None:
                 return False
             else:
                 return BinarySearchTree.contains(self._root.left, value)

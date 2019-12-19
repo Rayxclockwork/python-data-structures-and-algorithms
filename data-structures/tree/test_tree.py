@@ -20,8 +20,8 @@ def test_three_members():
     tree.add(15)
 
     assert tree._root.value == 10
-    assert tree._root.right.value == 5
-    assert tree._root.left.value == 15
+    assert tree._root.left.value == 5
+    assert tree._root.right.value == 15
 
 
 def test_pre_order():
@@ -57,13 +57,23 @@ def test_post_order():
     assert expected == actual
 
 
-def test_adds():
-    pass
-
-
 def test_contains_true():
-    pass
+    tree = BinarySearchTree()
+    tree.add(10)
+    tree.add(5)
+    tree.add(15)
+
+    expected = True
+    actual = tree.contains(5)
+    assert expected == actual
 
 
 def test_contains_false():
-    pass
+    tree = BinarySearchTree()
+    tree.add(10)
+    tree.add(5)
+    tree.add(15)
+
+    expected = False
+    actual = tree.contains(12)
+    assert expected == actual
