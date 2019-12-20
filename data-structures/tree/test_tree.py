@@ -57,7 +57,18 @@ def test_post_order():
     assert expected == actual
 
 
-def test_contains_true():
+def test_contains_root_true():
+    tree = BinarySearchTree()
+    tree.add(10)
+    tree.add(5)
+    tree.add(15)
+
+    expected = True
+    actual = tree.contains(10)
+    assert expected == actual
+
+
+def test_contains_node_true():
     tree = BinarySearchTree()
     tree.add(10)
     tree.add(5)

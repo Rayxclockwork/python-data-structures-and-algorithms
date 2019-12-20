@@ -70,21 +70,28 @@ class BinarySearchTree(BinaryTree):
         else:
             if not self._root.right:
                 self._root.right = node
-        print(node.value)
-        print(self._root.value)
 
     def contains(self, value):
         """returns boolean that expresses whether or not value exists in binary tree"""
+        if self._root == None:
+            return False
+
         if self._root.value == value:
             return True
 
-        elif value > self._root.value:
-            if self._root.right == None:
-                return False
-            else:
-                return BinarySearchTree.contains(self._root.right, value)
-        else:
-            if self._root.left == None:
-                return False
-            else:
-                return BinarySearchTree.contains(self._root.left, value)
+        current = self._root
+        while True:
+            if value == current.value:
+                return True
+            if value > current.value:
+                if current.right:
+                    current = current.right
+                else:
+                    return False
+
+
+            if value < current.value:
+                if current.left:
+                    current = current.left
+                else:
+                    return False
