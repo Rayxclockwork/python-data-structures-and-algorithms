@@ -62,19 +62,21 @@ class BinarySearchTree(BinaryTree):
         node = _Node(value)
         if self._root is None:
             self._root = node
-
+            return
 
         current = self._root
         while True:
-            if value < self._root.value:
+            if value < current.value:
                 if not current.left:
                     current.left = node
+                    return
                 else:
                     current = current.left
 
         else:
             if not current.right:
                 current.right = node
+                return
             else:
                 current = current.right
 
