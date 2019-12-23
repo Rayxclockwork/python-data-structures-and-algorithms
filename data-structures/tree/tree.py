@@ -73,12 +73,12 @@ class BinarySearchTree(BinaryTree):
                 else:
                     current = current.left
 
-        else:
-            if not current.right:
-                current.right = node
-                return
             else:
-                current = current.right
+                if not current.right:
+                    current.right = node
+                    return
+                else:
+                    current = current.right
 
     def contains(self, value):
         """returns boolean that expresses whether or not value exists in binary tree"""
