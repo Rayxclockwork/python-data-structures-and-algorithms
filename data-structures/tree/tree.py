@@ -14,6 +14,9 @@ class BinaryTree():
     def pre_order(self, node=None, arr=[]):
         """Starts at root, then moves left to right"""
         node = node or self._root
+
+        if node is None:
+            return []
         arr.append(node.value)
 
         if node.left:
@@ -27,7 +30,10 @@ class BinaryTree():
 
     def in_order(self, node=None, arr=[]):
         """Starts at left and moves over to root, then to the right"""
-        node=node or self._root
+        node = node or self._root
+
+        if node is None:
+            return []
 
         if node.left:
             self.in_order(node.left, arr)
@@ -43,6 +49,9 @@ class BinaryTree():
     def post_order(self, node=None, arr=[]):
         """Starts at left, moves right, ends at root"""
         node=node or self._root
+
+        if node is None:
+            return []
 
         if node.left:
             self.post_order(node.left, arr)

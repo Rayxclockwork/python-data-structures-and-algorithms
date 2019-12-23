@@ -23,6 +23,24 @@ def test_three_members():
     assert tree._root.left.value == 5
     assert tree._root.right.value == 15
 
+def test_in_order_empty():
+    tree = BinarySearchTree()
+    expected = []
+    actual = tree.in_order()
+    assert actual == expected
+
+def test_pre_order_empty():
+    tree = BinarySearchTree()
+    expected = []
+    actual = tree.pre_order()
+    assert actual == expected
+
+def test_post_order_empty():
+    tree = BinarySearchTree()
+    expected = []
+    actual = tree.post_order()
+    assert actual == expected
+
 
 def test_pre_order():
     tree = BinarySearchTree()
