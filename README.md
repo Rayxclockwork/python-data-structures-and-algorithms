@@ -16,3 +16,4 @@ Data Structures:
 
 1. [Linked lists](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/data-structures/linked-lists)
 2. [Stacks and Queues](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/data-structures/stacks_and_queues)
+3. [Binary Tree](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/data-structures/tree)
