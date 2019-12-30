@@ -1,15 +1,52 @@
+from collections import deque
+
 class _Node():
     def __init__(self, value):
         """Creates new node when called"""
         self.value = value
         self.left = None
         self.right = None
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        """creates new instance of queue"""
+        self.front = None
+
+    def enqueue(self, value):
+        """adds new node to end of queue"""
+        current = self.front
+        new_node = _Node(value)
+        if current is None:
+            self.front = new_node
+        else:
+            while current.next:
+                current = current.next
+                current.next = new_node
+
+    def dequeue(self):
+        """removes node from beginning of queue"""
+        if self.front == None:
+            return ('Queue is empty')
+        else:
+            removed_node = self.front
+            self.front = self.front.next
+            return removed_node.value
+
+    def peek(self):
+        """returns value of node from beginning of queue"""
+        if self.front:
+            return self.front.value
+        else:
+            return None
+
 
 
 class BinaryTree():
     def __init__(self):
         """Creates new instance of Binary Tree"""
         self._root = None
+
 
     def pre_order(self, node=None, arr=[]):
         """Starts at root, then moves left to right"""
@@ -48,7 +85,7 @@ class BinaryTree():
 
     def post_order(self, node=None, arr=[]):
         """Starts at left, moves right, ends at root"""
-        node=node or self._root
+        node = node or self._root
 
         if node is None:
             return []
@@ -63,6 +100,26 @@ class BinaryTree():
 
         return arr
 
+    def breadth_first(self, node=None):
+        """Starts at the root, moves to children left to right, then moves to those children left to right"""
+        q = []
+
+        if self._root:
+            q.append(self._root.value)
+        else:
+            return None
+
+
+        while (len(q) > 0):
+            node = q.pop(0)
+
+            if node.left is not None:
+                q.append(node.left.value)
+
+            if node.right is not None:
+                q.append(node.right.value)
+
+        return q
 
 class BinarySearchTree(BinaryTree):
 
