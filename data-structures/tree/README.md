@@ -16,3 +16,5 @@ post_order
 add
 contains
 breadth_first
+
+![whiteboard:](/assets/breadthfirst.jpg)
