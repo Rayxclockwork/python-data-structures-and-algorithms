@@ -75,7 +75,7 @@ def test_breadth_first():
     tree.add(18)
 
     expected = [10, 5, 15, 3, 7, 12, 18, 6]
-    actual = tree.breadth_first()
+    actual = BinarySearchTree.breadth_first(tree)
     assert expected == actual
 
 

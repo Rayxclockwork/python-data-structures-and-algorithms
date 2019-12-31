@@ -100,26 +100,27 @@ class BinaryTree():
 
         return arr
 
-    def breadth_first(self, node=None):
+    @staticmethod
+    def breadth_first(tree, node=None, arr = None):
         """Starts at the root, moves to children left to right, then moves to those children left to right"""
-        q = []
+        q = Queue()
 
-        if self._root:
-            q.append(self._root.value)
-        else:
-            return None
+        if arr is None:
+            arr = []
 
+        if tree._root:
+            q.enqueue(tree._root)
 
-        while (len(q) > 0):
-            node = q.pop(0)
+        while q.peek():
+            node_front = q.dequeue()
+            arr.append(node_front.value)
 
-            if node.left is not None:
-                q.append(node.left.value)
+            if node_front.left:
+                q.enqueue(node_front.left)
+            if node_front.right:
+                q.enqueue(node_front.right)
 
-            if node.right is not None:
-                q.append(node.right.value)
-
-        return q
+        return arr
 
 class BinarySearchTree(BinaryTree):
 
