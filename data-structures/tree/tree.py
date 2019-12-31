@@ -1,15 +1,52 @@
+from collections import deque
+
 class _Node():
     def __init__(self, value):
         """Creates new node when called"""
         self.value = value
         self.left = None
         self.right = None
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        """creates new instance of queue"""
+        self.front = None
+
+    def enqueue(self, value):
+        """adds new node to end of queue"""
+        current = self.front
+        new_node = _Node(value)
+        if current is None:
+            self.front = new_node
+        else:
+            while current.next:
+                current = current.next
+                current.next = new_node
+
+    def dequeue(self):
+        """removes node from beginning of queue"""
+        if self.front == None:
+            return ('Queue is empty')
+        else:
+            removed_node = self.front
+            self.front = self.front.next
+            return removed_node.value
+
+    def peek(self):
+        """returns value of node from beginning of queue"""
+        if self.front:
+            return self.front.value
+        else:
+            return None
+
 
 
 class BinaryTree():
     def __init__(self):
         """Creates new instance of Binary Tree"""
         self._root = None
+
 
     def pre_order(self, node=None, arr=[]):
         """Starts at root, then moves left to right"""
@@ -48,7 +85,7 @@ class BinaryTree():
 
     def post_order(self, node=None, arr=[]):
         """Starts at left, moves right, ends at root"""
-        node=node or self._root
+        node = node or self._root
 
         if node is None:
             return []
@@ -63,6 +100,27 @@ class BinaryTree():
 
         return arr
 
+    @staticmethod
+    def breadth_first(tree, node=None, arr = None):
+        """Starts at the root, moves to children left to right, then moves to those children left to right"""
+        q = Queue()
+
+        if arr is None:
+            arr = []
+
+        if tree._root:
+            q.enqueue(tree._root)
+
+        while q.peek():
+            node_front = q.dequeue()
+            arr.append(node_front.value)
+
+            if node_front.left:
+                q.enqueue(node_front.left)
+            if node_front.right:
+                q.enqueue(node_front.right)
+
+        return arr
 
 class BinarySearchTree(BinaryTree):
 
