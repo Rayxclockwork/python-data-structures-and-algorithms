@@ -54,7 +54,7 @@ def test_pre_order():
 
 
 def test_in_order():
-    tree = BinarySearchTree()
+    tree = BinaryTree()
     tree.add(10)
     tree.add(5)
     tree.add(15)
@@ -63,8 +63,23 @@ def test_in_order():
     actual = tree.in_order()
     assert expected == actual
 
+# def test_breadth_first():
+#     tree = BinarySearchTree()
+#     tree.add(10)
+#     tree.add(5)
+#     tree.add(15)
+#     tree.add(7)
+#     tree.add(3)
+#     tree.add(12)
+#     tree.add(6)
+#     tree.add(18)
+
+#     expected = [10, 5, 15, 3, 7, 12, 18, 6]
+#     actual = BinarySearchTree.breadth_first(tree)
+#     assert expected == actual
+
 def test_breadth_first():
-    tree = BinarySearchTree()
+    tree = BinaryTree()
     tree.add(10)
     tree.add(5)
     tree.add(15)
@@ -75,9 +90,8 @@ def test_breadth_first():
     tree.add(18)
 
     expected = [10, 5, 15, 3, 7, 12, 18, 6]
-    actual = BinarySearchTree.breadth_first(tree)
+    actual = BinaryTree.breadth_first(tree)
     assert expected == actual
-
 
 def test_post_order():
     tree = BinarySearchTree()

@@ -15,14 +15,14 @@ class Queue:
 
     def enqueue(self, value):
         """adds new node to end of queue"""
-        current = self.front
         new_node = _Node(value)
-        if current is None:
+        if not self.front:
             self.front = new_node
-        else:
-            while current.next:
-                current = current.next
-                current.next = new_node
+
+        current = self.front
+        while current.next:
+            current = current.next
+        current.next = new_node
 
     def dequeue(self):
         """removes node from beginning of queue"""
@@ -31,7 +31,7 @@ class Queue:
         else:
             removed_node = self.front
             self.front = self.front.next
-            return removed_node.value
+            return removed_node
 
     def peek(self):
         """returns value of node from beginning of queue"""
@@ -40,12 +40,39 @@ class Queue:
         else:
             return None
 
+    def is_empty(self):
+        """returns boolean stating whether or not queue is empty"""
+        if self.front == None:
+            return True
+        else:
+            return False
 
 
 class BinaryTree():
     def __init__(self):
         """Creates new instance of Binary Tree"""
         self._root = None
+
+    def add(self, value):
+        node = _Node(value)
+        if not self._root:
+            self._root = node
+        q = Queue()
+
+        q.enqueue(self._root.value)
+
+        while not q.is_empty():
+            current = q.dequeue()
+            if current.left:
+                q.enqueue(current.left.value)
+            else:
+                current.left = node
+                return
+            if current.right:
+                q.enqueue(current.right.value)
+            else:
+                current.right = node
+                return
 
 
     def pre_order(self, node=None, arr=[]):
@@ -100,6 +127,26 @@ class BinaryTree():
 
         return arr
 
+    def find_maximum_value(self, node = None):
+        node = node or self._root
+        max = self._root.value
+
+        if node is None:
+            return None
+        q = Queue()
+        q.enqueue(self._root)
+
+        while not q.is_empty():
+            current = q.dequeue()
+            if current.value > max:
+                max = current.value
+            if current.left:
+                q.enqueue(current.left)
+            if current.right:
+                q.enqueue(current.right)
+
+            return max
+
     @staticmethod
     def breadth_first(tree, node=None, arr = None):
         """Starts at the root, moves to children left to right, then moves to those children left to right"""
@@ -108,17 +155,15 @@ class BinaryTree():
         if arr is None:
             arr = []
 
-        if tree._root:
-            q.enqueue(tree._root)
+        q.enqueue(tree._root)
 
-        while q.peek():
-            node_front = q.dequeue()
-            arr.append(node_front.value)
-
-            if node_front.left:
-                q.enqueue(node_front.left)
-            if node_front.right:
-                q.enqueue(node_front.right)
+        while not q.is_empty():
+            current = q.dequeue()
+            if current.left:
+                q.enqueue(current.left)
+            if current.right:
+                q.enqueue(current.right)
+            arr.append(current.value.value)
 
         return arr
 
