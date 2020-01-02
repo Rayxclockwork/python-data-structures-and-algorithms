@@ -57,22 +57,23 @@ class BinaryTree():
         node = _Node(value)
         if not self._root:
             self._root = node
-        q = Queue()
 
-        q.enqueue(self._root.value)
-
-        while not q.is_empty():
-            current = q.dequeue()
-            if current.left:
-                q.enqueue(current.left.value)
-            else:
-                current.left = node
-                return
-            if current.right:
-                q.enqueue(current.right.value)
-            else:
-                current.right = node
-                return
+        else:
+            current = self._root
+            q = Queue()
+            q.enqueue(current)
+            while not q.is_empty():
+                current = q.dequeue()
+                if not current.left:
+                    current.left = node
+                    return
+                else:
+                    q.enqueue(current.left)
+                if not current.right:
+                    current.right = node
+                    return
+                else:
+                    q.enqueue(current.right)
 
 
     def pre_order(self, node=None, arr=[]):
@@ -147,25 +148,24 @@ class BinaryTree():
 
             return max
 
-    @staticmethod
-    def breadth_first(tree, node=None, arr = None):
+    def breadth_first(self, node=None, arr = None):
         """Starts at the root, moves to children left to right, then moves to those children left to right"""
-        q = Queue()
+        if not self._root:
+           return None
+        q, arr = Queue(), []
 
-        if arr is None:
-            arr = []
-
-        q.enqueue(tree._root)
-
+        q.enqueue(self._root)
         while not q.is_empty():
             current = q.dequeue()
             if current.left:
                 q.enqueue(current.left)
             if current.right:
                 q.enqueue(current.right)
-            arr.append(current.value.value)
+            arr.append(current.value)
 
         return arr
+
+
 
 class BinarySearchTree(BinaryTree):
 
