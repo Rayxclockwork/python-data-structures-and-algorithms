@@ -16,5 +16,7 @@ post_order
 add
 contains
 breadth_first
+find_maximum_value
 
 ![whiteboard:](/assets/breadthfirst.jpg)
+![whiteboard:](/assets/20191231_144614.jpg)
