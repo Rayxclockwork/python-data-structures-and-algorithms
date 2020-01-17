@@ -12,7 +12,7 @@ Algorithms:
 6. [First in, First out Animal Shelter](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/fifo_animal_shelter)
 7. [Fizz-buzz tree](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/fizz_buzz_tree)
 8. [Insert Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/insert_sort)
-9 [Merge Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/merge_sort)
+9. [Merge Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/merge_sort)
 10. [Quick Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/quick_sort)
 
 
