@@ -1,7 +1,6 @@
 # Challenge Summary
 <!-- Short summary or background information -->
-Merge sort code and tests
-Blog detailing steps of merge sort
+Quick sort in python
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -9,5 +8,5 @@ Blog detailing steps of merge sort
 
 ## Solution
 <!-- Embedded whiteboard image -->
-Steps outlined in blog
+Steps in blog post
 No whiteboard
