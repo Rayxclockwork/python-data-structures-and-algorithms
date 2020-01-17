@@ -16,7 +16,7 @@ Big O of space (as with all linked lists) is O(n)
 <!-- Description of each method publicly available in each of your hashtable -->
 Class of Hashtables
 Methods of -
-    #### add: takes in key and value; hashes the key and adds key/value pair to table
-    #### get: takes in key and returns value from pair
-    #### contains: takes in key and returns boolean indicating if key is in the table
-    #### hash: takes in key and returns index
+   #### add: takes in key and value; hashes the key and adds key/value pair to table
+   #### get: takes in key and returns value from pair
+   #### contains: takes in key and returns boolean indicating if key is in the table
+   #### hash: takes in key and returns index
