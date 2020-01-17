@@ -34,3 +34,4 @@ def quick_sort(arr, left_index, right_index):
 	quick_sort(arr, left_index, pivot_position-1)
 	
 	quick_sort(arr, pivot_position+1, right_index)
+
