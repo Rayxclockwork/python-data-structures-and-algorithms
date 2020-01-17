@@ -1,20 +1,14 @@
-class Node:
-    def __init__(self, key, value):
-        self.key = key
-        self.value = value
-        self.kvp = ['key:value']
-
-
 class Hashtable:
     def __init__(self, length=4):
         self.array = [None] * length
 
-    def hash(self, key):
+    def hashing(self, key):
         length = len(self.array)
         return hash(key) % length
 
     def get(self, key):
-        i = self.hash(key)
+        i = self.hashing(key)
+        print(self.array)
         if self.array[i] is None:
             raise KeyError()
         else:
@@ -22,14 +16,21 @@ class Hashtable:
                 if key_value_pair[0] == key:
                     return key_value_pair[1]
 
+            raise KeyError()
+
+
     def contains(self, key):
-        if key in self.array:
-            return True
+        i = self.hashing(key)
+        if self.array[i] is None:
+            return False
         else:
+            for key_value_pair in self.array[i]:
+                if key_value_pair[0] == key:
+                    return True
             return False
 
     def add(self, key, value):
-        i = self.hash(key)
+        i = self.hashing(key)
         if self.array[i] is not None:
             for key_value_pair in self.array[i]:
                 if key_value_pair[0] == key:
