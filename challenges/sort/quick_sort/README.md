@@ -10,3 +10,4 @@ Quick sort in python
 <!-- Embedded whiteboard image -->
 Steps in blog post
 No whiteboard
+
