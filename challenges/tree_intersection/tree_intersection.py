@@ -133,10 +133,9 @@ def tree_intersection(tree_1, tree_2):
 	
 	recurse_traverse(tree_1._root, ht, lst)
 	recurse_traverse(tree_2._root, ht, lst)
-	print(lst)
 	return lst
 
-	
+
 
 if __name__ == '__main__':
 	tree_1 = BinaryTree()
@@ -147,10 +146,10 @@ if __name__ == '__main__':
 	tree_1.add(6)
 
 	tree_2 = BinaryTree()
-	tree_2.add(12)
 	tree_2.add(8)
+	tree_2.add(12)
 	tree_2.add(5)
 	tree_2.add(21)
 	tree_2.add(4)
 
-tree_intersection(tree_1, tree_2)
+	tree_intersection(tree_1, tree_2)
