@@ -14,6 +14,8 @@ Algorithms:
 8. [Insert Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/insert_sort)
 9. [Merge Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/merge_sort)
 10. [Quick Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/quick_sort)
+11. [First Repeated Word](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/repeated_word)
+12. [Tree Intersection](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/tree_intersection)
 
 
 Data Structures:
