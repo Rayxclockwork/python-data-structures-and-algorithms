@@ -44,9 +44,7 @@ class Hashtable:
 
 
 
-hash_1 = Hashtable()
-hash_2 = Hashtable()
-def left_join(hash_1, hash_2, key):
+def left_join(hash_1, hash_2):
 	results = []
 	while key in hash_1:
 		if key in hash_2:
