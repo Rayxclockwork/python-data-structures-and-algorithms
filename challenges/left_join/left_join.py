@@ -46,7 +46,7 @@ class Hashtable:
 
 def left_join(hash_1, hash_2):
 	results = []
-	while key in hash_1:
+	for key in hash_1:
 		if key in hash_2:
 			
 			output_1 = [key, hash_1[key], hash_2.get(key)]
