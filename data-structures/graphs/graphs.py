@@ -5,21 +5,23 @@ class Graph:
 
     def add_node(self, value):
         """Adds a vertex"""
+
         v = Vertex(value)
         self._adjacency_list[v] = []
         return v
 
     def size(self):
         """returns number of values in adjacency list"""
+
         return len(self._adjacency_list)
 
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
 
-        if start_vertex.value not in self._adjacency_list:
+        if start_vertex not in self._adjacency_list:
             raise KeyError('Start Vertex not in graph')
 
-        if end_vertex.value not in self._adjacency_list:
+        if end_vertex not in self._adjacency_list:
             raise KeyError('End Vertex not in graph')
 
         # TODO: Handle weight

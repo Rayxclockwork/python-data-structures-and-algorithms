@@ -79,7 +79,7 @@ def test_get_neighbors():
     graph.add_edge(start, end, 44)
     neighbors = graph.get_neighbors(start)
     assert len(neighbors) == 1
-    assert neighbors[0].value == 'coffee'
+    assert neighbors[0][0].value == 'coffee'
     assert isinstance(neighbors[0][0], Vertex)
     assert neighbors[0][1] == 44
 
