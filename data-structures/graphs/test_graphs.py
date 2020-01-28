@@ -83,3 +83,102 @@ def test_get_neighbors():
     assert isinstance(neighbors[0][0], Vertex)
     assert neighbors[0][1] == 44
 
+def test_breadth_first():
+    g = Graph()
+    v1 = g.add_node('Pandora')
+    v2 = g.add_node('Mordor')
+    g.add_edge(v1, v2, 110)
+    expected = ['Pandora', 'Mordor']
+    actual = g.breadth_first(v1)
+    assert expected == actual
+
+
+def test_get_edges_one_vertex():
+    g = Graph()
+    v1 = g.add_node('Pandora')
+    v2 = g.add_node('Mordor')
+    v3 = g.add_node('Monstropolis')
+    v4 = g.add_node('Metroville')
+    v5 = g.add_node('Naboo')
+    v6 = g.add_node('Narnia')
+
+    g.add_nondirectional_edge(v1, v2, 110)
+    g.add_nondirectional_edge(v2, v3, 50)
+    g.add_nondirectional_edge(v2, v4, 12)
+    g.add_nondirectional_edge(v3, v5, 43)
+    g.add_nondirectional_edge(v4, v5, 23)
+    g.add_nondirectional_edge(v4, v6, 14)
+    g.add_nondirectional_edge(v5, v6, 21)
+
+    actual = g.get_edge(['Mordor'])
+    expected = (True, '$0')
+    assert actual == expected
+
+
+def test_get_edges_two_vertex():
+    g = Graph()
+    v1 = g.add_node('Pandora')
+    v2 = g.add_node('Mordor')
+    v3 = g.add_node('Monstropolis')
+    v4 = g.add_node('Metroville')
+    v5 = g.add_node('Naboo')
+    v6 = g.add_node('Narnia')
+
+    g.add_nondirectional_edge(v1, v2, 110)
+    g.add_nondirectional_edge(v2, v3, 50)
+    g.add_nondirectional_edge(v2, v4, 12)
+    g.add_nondirectional_edge(v3, v4, 75)
+    g.add_nondirectional_edge(v3, v5, 43)
+    g.add_nondirectional_edge(v4, v5, 23)
+    g.add_nondirectional_edge(v4, v6, 14)
+    g.add_nondirectional_edge(v5, v6, 21)
+
+    actual = g.get_edge(['Monstropolis', 'Metroville'])
+    expected = (True, '$75')
+    assert actual == expected
+
+
+def test_three_vertex():
+    g = Graph()
+    v1 = g.add_node('Pandora')
+    v2 = g.add_node('Mordor')
+    v3 = g.add_node('Monstropolis')
+    v4 = g.add_node('Metroville')
+    v5 = g.add_node('Naboo')
+    v6 = g.add_node('Narnia')
+
+    g.add_nondirectional_edge(v1, v2, 110)
+    g.add_nondirectional_edge(v2, v3, 50)
+    g.add_nondirectional_edge(v2, v4, 12)
+    g.add_nondirectional_edge(v3, v4, 75)
+    g.add_nondirectional_edge(v3, v5, 43)
+    g.add_nondirectional_edge(v4, v5, 23)
+    g.add_nondirectional_edge(v4, v6, 14)
+    g.add_nondirectional_edge(v5, v6, 21)
+
+    actual = g.get_edge(['Pandora', 'Mordor', 'Monstropolis'])
+    expected = (True, '$160')
+    assert actual == expected
+
+
+def test_false_get_edges():
+    g = Graph()
+    v1 = g.add_node('Pandora')
+    v2 = g.add_node('Mordor')
+    v3 = g.add_node('Monstropolis')
+    v4 = g.add_node('Metroville')
+    v5 = g.add_node('Naboo')
+    v6 = g.add_node('Narnia')
+
+    g.add_nondirectional_edge(v1, v2, 110)
+    g.add_nondirectional_edge(v2, v3, 50)
+    g.add_nondirectional_edge(v2, v4, 12)
+    g.add_nondirectional_edge(v3, v4, 75)
+    g.add_nondirectional_edge(v3, v5, 43)
+    g.add_nondirectional_edge(v4, v5, 23)
+    g.add_nondirectional_edge(v4, v6, 14)
+    g.add_nondirectional_edge(v5, v6, 21)
+
+    actual = g.get_edge(['Naboo, Pandora'])
+    expected = (False, '$0')
+    assert actual == expected

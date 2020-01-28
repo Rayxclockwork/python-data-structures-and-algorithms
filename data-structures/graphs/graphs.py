@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class Graph:
 
     def __init__(self):
@@ -16,7 +17,6 @@ class Graph:
         """returns number of values in adjacency list"""
 
         return len(self._adjacency_list)
-
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
 
@@ -41,8 +41,9 @@ class Graph:
 
     def breadth_first(self, vertex):
         output = []
+
         def action(vertex):
-            output.append(vertex)
+            output.append(vertex.value)
         self.__traverse(vertex, action)
 
         return output
@@ -60,15 +61,38 @@ class Graph:
                     q.enqueue(v)
             action(current)
 
+    def get_edge(self, v_lst):
+
+        def contains_vertex(value, lst):
+            for vertex in lst:
+                if isinstance(vertex, tuple):
+                    if vertex[0].value == value:
+                        return vertex
+                    continue
+                if vertex.value == value:
+                    return vertex
+            return False, 0
+
+        current = contains_vertex(v_lst[0], self._adjacency_list.keys())
+        if isinstance(current, Vertex):
+            tsum = 0
+            for index in range(1, len(v_lst)):
+                current, cost = contains_vertex(v_lst[index], self.get_neighbors(current))
+                tsum += cost
+                if not current:
+                    return (False, '$0')
+            return (True, f'${tsum}')
+        return (False, '$0')
+
 
 class Vertex:
     def __init__(self, value):
         self.value = value
 
+
 class Queue:
     def __init__(self):
         self.q = deque()
-
 
     def enqueue(self, value):
         self.q.appendleft(value)
