@@ -21,3 +21,7 @@ breadth_first
 get_edges
 
 classes - Graph, Vertex, and Queue
+
+![whiteboard: breadth](/assets/breadthfirst (1).jpg)
+![whiteboard: get edge 1](/assets/getedges1.jpg)
+![whiteboard: get edge 1](/assets/getedges2.jpg)
