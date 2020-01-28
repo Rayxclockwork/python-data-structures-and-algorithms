@@ -16,6 +16,7 @@ Algorithms:
 10. [Quick Sort](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/sort/quick_sort)
 11. [First Repeated Word](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/repeated_word)
 12. [Tree Intersection](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/tree_intersection)
+13. [Left Join](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/challenges/left_join)
 
 
 Data Structures:
@@ -24,3 +25,4 @@ Data Structures:
 2. [Stacks and Queues](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/data-structures/stacks_and_queues)
 3. [Binary Tree](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/data-structures/tree)
 4. [Hashtables](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/data-structures/hashtable)
+5. [Graphs](https://github.com/Rayxclockwork/python-data-structures-and-algorithms/tree/master/data-structures/graphs)
