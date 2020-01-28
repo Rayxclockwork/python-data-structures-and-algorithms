@@ -87,7 +87,7 @@ def test_breadth_first():
     g = Graph()
     v1 = g.add_node('Pandora')
     v2 = g.add_node('Mordor')
-    g.add_edge(v1, v2, 110)
+    g.add_nondirectional_edge(v1, v2, 110)
     expected = ['Pandora', 'Mordor']
     actual = g.breadth_first(v1)
     assert expected == actual

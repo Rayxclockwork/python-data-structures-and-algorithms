@@ -51,7 +51,7 @@ class Graph:
     def __traverse(self, vertex, action):
         q = Queue()
         q.enqueue(vertex)
-        visited = set()
+        visited = set([vertex])
         while not q.empty():
             current = q.dequeue()
             for edge in self.get_neighbors(current):
