@@ -89,10 +89,9 @@ class Graph:
         lst = []
         s = Stack()
         s.push(root)
-        lst.append(root)
-        while s:
+        while not s.is_empty():
             vertex = s.pop()
-            lst.append(vertex)
+            lst.append(vertex.value)
 
             for neighbor in reversed(self.get_neighbors(vertex)):
                 if not neighbor[0].visited:
@@ -110,6 +109,7 @@ class Vertex:
     def __init__(self, value):
         self.value = value
         self.next = None
+        self.visited = False
 
 
 class Stack:

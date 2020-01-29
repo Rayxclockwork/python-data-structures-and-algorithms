@@ -28,4 +28,4 @@ classes - Graph, Vertex, Queue, and Stack
 ![whiteboard: breadth](/assets/breadthfirstgraph.jpg)
 ![whiteboard: get edge 1](/assets/getedges1.jpg)
 ![whiteboard: get edge 1](/assets/getedges2.jpg)
-
+![whiteboard: depth first](/assets/depthfirstgraph.jpg)
