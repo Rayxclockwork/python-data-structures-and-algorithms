@@ -85,9 +85,67 @@ class Graph:
         return (False, '$0')
 
 
+    def depth_first(self, root):
+        lst = []
+        s = Stack()
+        s.push(root)
+        lst.append(root)
+        while s:
+            vertex = s.pop()
+            lst.append(vertex)
+
+            for neighbor in reversed(self.get_neighbors(vertex)):
+                if not neighbor[0].visited:
+                    vertex.visited = True
+                    neighbor[0].visited = True
+
+                    s.push(neighbor[0])
+
+        for node in self._adjacency_list:
+            node.visited = False
+
+        return lst
+
 class Vertex:
     def __init__(self, value):
         self.value = value
+        self.next = None
+
+
+class Stack:
+
+    def __init__(self):
+        """creates new stack instance"""
+        self.top = None
+
+    def push(self, value):
+        """pushes new node onto stack"""
+        new_node = Vertex(value)
+        if self.top is None:
+            self.top = new_node
+        else:
+            new_node.next = self.top
+            self.top = new_node
+
+    def pop(self):
+        """takes top node off stack"""
+        if self.top == None:
+            return ('stack is empty')
+        else:
+            popped_node = self.top
+            self.top = self.top.next
+            return popped_node.value
+
+    def peek(self):
+        """returns value of top node"""
+        return self.top.value
+
+    def is_empty(self):
+        """returns boolean stating whether or not stack is empty"""
+        if self.top == None:
+            return True
+        else:
+            return False
 
 
 class Queue:

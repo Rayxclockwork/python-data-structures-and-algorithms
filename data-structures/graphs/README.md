@@ -19,5 +19,6 @@ get_nodes
 get_ neighbors
 breadth_first
 get_edges
+depth_first
 
-classes - Graph, Vertex, and Queue
+classes - Graph, Vertex, Queue, and Stack

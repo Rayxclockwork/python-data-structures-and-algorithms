@@ -182,3 +182,30 @@ def test_false_get_edges():
     actual = g.get_edge(['Naboo, Pandora'])
     expected = (False, '$0')
     assert actual == expected
+
+
+def test_depth_first_1():
+    g = Graph()
+    v1 = g.add_node('A')
+    v2 = g.add_node('B')
+    v3 = g.add_node('C')
+    v4 = g.add_node('G')
+    v5 = g.add_node('D')
+    v6 = g.add_node('E')
+    v7 = g.add_node('F')
+    v8 = g.add_node('H')
+
+    g.add_nondirectional_edge(v1, v2, 110)
+    g.add_nondirectional_edge(v2, v3, 50)
+    g.add_nondirectional_edge(v2, v5, 12)
+    g.add_nondirectional_edge(v3, v4, 75)
+    g.add_nondirectional_edge(v1, v5, 43)
+    g.add_nondirectional_edge(v5, v7, 23)
+    g.add_nondirectional_edge(v7, v8, 14)
+    g.add_nondirectional_edge(v5, v6, 21)
+    g.add_nondirectional_edge(v5, v8, 29)
+
+
+    actual = g.depth_first('A')
+    expected = ['A', 'B', 'C', 'G', 'D', 'E', 'H', 'F']
+    assert actual == expected
