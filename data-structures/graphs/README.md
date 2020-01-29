@@ -19,9 +19,13 @@ get_nodes
 get_ neighbors
 breadth_first
 get_edges
+depth_first
 
-classes - Graph, Vertex, and Queue
+
+classes - Graph, Vertex, Queue, and Stack
+
 
 ![whiteboard: breadth](/assets/breadthfirstgraph.jpg)
 ![whiteboard: get edge 1](/assets/getedges1.jpg)
 ![whiteboard: get edge 1](/assets/getedges2.jpg)
+
